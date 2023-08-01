@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Define character encoding for the document -->
+        <meta charset="UTF-8">
+        <!-- Specify the version of Internet Explorer to use -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Set the width of the viewport to the width of the device, and scale the content to fit the viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            TodoList
+        </title>
+        
+        <link rel="stylesheet" href="style.css">
+        
+
+    </head>
+
+    <body>
+        
+        <div id="todolist-container">
+            <div id="todo-app">
+                
+                <h1>TODOLIST</h1>
+
+                <!-- A text box at the top to add a TODO Task to the list & 
+                    Add button: when a user clicks on the button, add that TODO Task to the list. -->
+                <div id="todolist-text-btn-row">
+                    <input id="add-task-textbox" type="text" placeholder="Enter TODO task here.." autofocus>
+                    <button type="submit" onclick="addTask()" id="add-task-btn">Add Task</button>
+                </div>
+
+                <!-- Text to display when TODO list is empty -->
+                <p id="empty-list"></p>
+
+                <!-- List of TODO tasks -->
+                <ul id="todo-list"> </ul>
+
+                <!-- Total number of tasks in the list and 'clear all tasks' event handler tag -->
+                <div id="tasks-stats">
+                    <p> Total Task: <span id="task-count"> </span> </p>
+                    <p id="clear-tasks"> Clear All Tasks </p>
+                </div>
+                            
+            </div>
+        </div>
+
+        <footer>
+            Yusuf Qureshi
+        </footer>
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
