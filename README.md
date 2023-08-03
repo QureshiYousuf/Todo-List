@@ -1,10 +1,9 @@
 # Todo-List
 
 ## 📜 Description:
-Developed the "Todo-List" Web application to show a list of Dishes with photos and names fetched from a remote API from www.themealdb.com. 
-Used HTML, CSS and JavaScript programming language to built the website.
+Developed this "Todo-List" Web application to add & list out a list of TODO tasks using HTML, CSS and JavaScript programming language to built the website.
 
-### 🔗 Link of Our Meal-App website: 
+### 🔗 Link of Our Meal-App website:  https://qureshiyousuf.github.io/Todo-List/
 
 ### 🔗 Video link of Our Meal-App explanation: 
   

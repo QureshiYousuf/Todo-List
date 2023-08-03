@@ -3,14 +3,17 @@
     padding: 0;
 }
 
+/* TODO List container */
 #todolist-container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     padding: 10px;
     background: linear-gradient(135deg, #153677, #4e085f);
 }
 
+/* TODO List header*/
 #todolist-container h1{
+    font-family: Comic Sans MS;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -26,6 +29,7 @@
     border-radius: 2.5%;
 }
 
+/* TODO text box & submit button */
 #todolist-text-btn-row {
     display: flex;
     align-items: center;
@@ -66,10 +70,11 @@
 }
 
 
+/* TODO list items */
 #todo-list li {
     list-style: none;
     font-size: 15px;
-    padding: 12px 8px 12px 50px;
+    padding: 12px 8px 5px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
@@ -97,6 +102,7 @@
     background-image: url(images/checked.png);
 }
 
+/* TODO list delete icon */
 #todo-list li span {
     position: absolute;
     right: 0;
@@ -114,11 +120,7 @@
     background: #edeef0;
 }
 
-#todo-app p.task-count {
-    margin-top: 20px;
-    text-align: center;
-}
-
+/* TODO list total & completed tasks count */
 #tasks-stats {
     display: flex;
     justify-content: space-around;
@@ -128,35 +130,54 @@
 }
 
 #tasks-stats > p{
-    padding: 10px 10px 8px;
-    
+    padding: 10px 10px 8px;   
+    font-family: cursive;
 }
 
+#tasks-stats span{
+    color: #ff5945;   
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+#tasks-stats #task-count {  /* Total & Completed task divider */
+    padding-right: 80px;
+    text-align: center;
+    border-right: 1.5px solid black;
+}
+
+
+/* button to clear all tasks */
 #clear-tasks{
-    background: #ff5945;
-    color: white;
+    width: 30%;
+    background: #fff;
+    text-align: center;
+    padding: 8px 8px 8px;
+    margin: 10px auto;
+    color: #ff5945;
     font-size: small;
     cursor: pointer;
+    border: 2px solid #ff5945;
     border-radius: 18px 1px 18px 1px;
 }
 
 #clear-tasks:hover {
     background-color: initial;
     padding: 8px 8px 8px;
-    border: 2px solid #ff5945;    
+    background: #ff5945;   
     cursor: pointer;
-    color: #ff5945;
+    color: #fff;
 }
 
-#clear-tasks.cleared {
-    background-color: initial;
-    padding: 8px 18px 8px;
-    border: 2px solid #ff5945;    
-    cursor: pointer;
-    color: #ff5945;
-}
-
+/* text displayed when no task added */
 #empty-list {
     text-align: center;
     color: #95979b;
+}
+
+/* time of task created */
+.li-div h6{
+    margin: 0 0 0 12%;
+    font-size: 10px;
+    opacity: 0.3;
 }

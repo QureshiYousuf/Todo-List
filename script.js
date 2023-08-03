@@ -1,17 +1,30 @@
 const inputBox = document.getElementById('add-task-textbox');
 const todoListContainer = document.getElementById('todo-list');
 const taskCountDisplaySpan = document.getElementById('task-count');
+const completedtaskCount = document.getElementById('completed-task-count');
 const clearAllTasks = document.getElementById('clear-tasks');
 const emptyListDisplay = document.getElementById('empty-list');
 
+let zeroTask = 0;
+completedtaskCount.innerHTML = zeroTask; // initially setting up completed task as 0 before completing/adding any tasks to the list.
 
 // addTask() function triggers when a user clicks on the "Add Task" button, add that todo task to the list.
 function addTask() {
+
+    
+    var timestamp = Date.now()/1000;  
+    //current timestamp  
+    var datetime = new Date(timestamp * 1000); 
 
     // Empty inputBox check
     if(inputBox.value === '') {
         alert("Kindly enter a TODO task..!")
     }else{         
+        const div = document.createElement("div");
+        div.classList.add('li-div');
+        todoListContainer.appendChild(div);
+        
+        
         let li = document.createElement("li"); // Creating a new 'li' tag for new list item
         li.innerHTML = inputBox.value; // inserting inputBox value to new list item
         todoListContainer.appendChild(li); // appending it into list container
@@ -20,6 +33,13 @@ function addTask() {
         let delIcon = "\u00d7"; // '\u00d7' is a unicode for '×', here used as Delete Icon
         delTaskIcon.innerHTML = delIcon;
         li.appendChild(delTaskIcon); // appending it into the list item
+
+        div.appendChild(li);
+
+        // time of task created
+        let taskTime = document.createElement('h6');
+        taskTime.innerHTML = datetime.toLocaleDateString();
+        div.appendChild(taskTime);
     }
 
     // Inserting the count of total number of tasks which are available inside TODO list container. Using 'split' func to segregate list items.
@@ -40,7 +60,7 @@ todoListContainer.addEventListener("click", (e) => {
         saveData(); // saving TODO list container items to localstorage after check/uncheck toggle
     } 
     else if(e.target.tagName == "SPAN") {
-        e.target.parentElement.remove(); // when clicked on <span> of li, removing it's parent i.e, <li>.
+        e.target.closest("div").remove();   // when clicked on <span> of li, removing it's list items div permanently.
         saveData(); // saving TODO list container items to localstorage after removing the task
     }
 }, false);
@@ -49,6 +69,7 @@ todoListContainer.addEventListener("click", (e) => {
 // Event listener to clear the data from local storage
 clearAllTasks.addEventListener('click', (e) => {
     localStorage.clear();
+    completedtaskCount.innerHTML = zeroTask;
     showList();
 }, false);
 
@@ -61,6 +82,13 @@ function saveData() {
 
 
 function showList() {
+
+    // handling of tasks that are completed when we have data stored in localStorage
+    if(localStorage.length != 0) {
+        let dataString = localStorage.getItem("data");
+        let competedTaskCount = dataString.split("checked").length - 1;
+        completedtaskCount.innerHTML = competedTaskCount;
+    }
 
     // getting the data from localstorage and inserting it into TODO list container
     todoListContainer.innerHTML = localStorage.getItem("data");
@@ -75,8 +103,9 @@ function showList() {
         emptyListDisplay.innerHTML = "";
     }
 
-    // Inserting total task count to the HTML
+    // Inserting total task count and completed task count to the HTML
     taskCountDisplaySpan.innerHTML = taskCount;
+    
 }
 
 
