@@ -11,7 +11,6 @@ completedtaskCount.innerHTML = zeroTask; // initially setting up completed task 
 // addTask() function triggers when a user clicks on the "Add Task" button, add that todo task to the list.
 function addTask() {
 
-    
     var timestamp = Date.now()/1000;  
     //current timestamp  
     var datetime = new Date(timestamp * 1000); 
