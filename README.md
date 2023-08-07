@@ -5,7 +5,7 @@ Developed this "Todo-List" Web application to add & list out a list of TODO task
 
 ### 🔗 Link of Our TODOLIST website:  https://qureshiyousuf.github.io/Todo-List/
 
-### 🔗 Video link of Our TODOLIST explanation: 
+### 🔗 Video link of Our TODOLIST explanation: https://drive.google.com/file/d/1HNTgf4H_JWhl_CYaYQlP3XvtagQ2Gizb/view?usp=sharing
   
 ## 🧪 Steps to Build locally:
 - Open VS Code / Android Studio IDE.
