@@ -3,9 +3,9 @@
 ## 📜 Description:
 Developed this "Todo-List" Web application to add & list out a list of TODO tasks using HTML, CSS and JavaScript programming language to built the website.
 
-### 🔗 Link of Our Meal-App website:  https://qureshiyousuf.github.io/Todo-List/
+### 🔗 Link of Our TODOLIST website:  https://qureshiyousuf.github.io/Todo-List/
 
-### 🔗 Video link of Our Meal-App explanation: 
+### 🔗 Video link of Our TODOLIST explanation: 
   
 ## 🧪 Steps to Build locally:
 - Open VS Code / Android Studio IDE.
