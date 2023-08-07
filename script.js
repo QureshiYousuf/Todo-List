@@ -82,13 +82,6 @@ function saveData() {
 
 function showList() {
 
-    // handling of tasks that are completed when we have data stored in localStorage
-    if(localStorage.length != 0) {
-        let dataString = localStorage.getItem("data");
-        let competedTaskCount = dataString.split("checked").length - 1;
-        completedtaskCount.innerHTML = competedTaskCount;
-    }
-
     // getting the data from localstorage and inserting it into TODO list container
     todoListContainer.innerHTML = localStorage.getItem("data");
 
@@ -98,12 +91,19 @@ function showList() {
     // If no task found displaying an text to notify users
     if(taskCount === 0) {
         emptyListDisplay.innerHTML = "No tasks added yet..!";
+        completedtaskCount.innerHTML = zeroTask;
+        taskCountDisplaySpan.innerHTML = zeroTask;
     }else{
         emptyListDisplay.innerHTML = "";
-    }
 
-    // Inserting total task count and completed task count to the HTML
-    taskCountDisplaySpan.innerHTML = taskCount;
+        // Inserting total task count and completed task count to the HTML
+       taskCountDisplaySpan.innerHTML = taskCount;
+
+        // handling of tasks that are completed when we have data stored in localStorage
+        let dataString = localStorage.getItem("data");
+        let competedTaskCount = dataString.split("checked").length - 1;
+        completedtaskCount.innerHTML = competedTaskCount;
+    }
     
 }
 
